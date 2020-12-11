@@ -1,6 +1,5 @@
 (ns clj.day1
-  (:require [clojure.math.combinatorics :as c]
-            [clojure.java.io :as io]))
+  (:require [clojure.math.combinatorics :as c]))
 
 (defn read-numbers [filename]
   (let [contents (slurp filename)
@@ -17,7 +16,7 @@
     (first
       (filter #(= (sum %) target) subsets))))
 
-(let [nums (read-numbers "C:\\Users\\james\\Desktop\\clojure\\advent-of-code-2020\\inputs\\day1_input.txt")
+(let [nums (read-numbers "inputs\\day1_input.txt")
       target 2020
       pair (subsets-summing-to nums 2 target)
       triplet (subsets-summing-to nums 3 target)]
